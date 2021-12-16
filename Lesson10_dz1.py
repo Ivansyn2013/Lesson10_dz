@@ -1,3 +1,14 @@
+def my_list(x, y):
+    res_list = []
+    if type(x) == list:
+        res1 = map(my_list, x, y)
+
+        for el in res1:
+            res_list.append(el)
+        return res_list
+    else:
+        return x + y
+
 class Matrix:
     def __init__(self, list):
         self.list = list
@@ -8,8 +19,9 @@ class Matrix:
         return ''
         #return f'{[IterMatList(el) for el in self.list]}' как это реализовать?
     def __add__(self, other):
-        for el_lvl1, ot_el_lvl1 in self.list, other.list:
-            for el_lvl2 in self.list
+        return Matrix(my_list(self.list, other.list))
+
+
 
 
 
@@ -41,3 +53,4 @@ mc3 = Matrix(mc_list3)
 print(mc1)
 print(mc2)
 print(mc3)
+print(mc1+mc2)
